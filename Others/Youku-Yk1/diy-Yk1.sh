@@ -31,7 +31,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custo
 sed -i 's|resolv.conf.d/resolv.conf.auto|resolv.conf.auto|g' `grep -l resolv.conf.d package/feeds/custom/*/root/etc/init.d/*`
 
 # custom插件汉化
-mv feeds/custom/luci-app-turboacc/po/zh_Hans feeds/custom/luci-app-turboacc/po/zh-cn
+# mv feeds/custom/luci-app-turboacc/po/zh_Hans feeds/custom/luci-app-turboacc/po/zh-cn
 
 # 修改aria插件下载目录设置
 sed -i 's|/mnt/sda1/aria2|/mnt/mmcblk0/aria2|1' feeds/custom/aria2/files/aria2.conf
