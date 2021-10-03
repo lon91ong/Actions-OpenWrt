@@ -59,7 +59,7 @@ B70 16m和32m分别使用了两种闪存布局, 主要是为了备忘. 32m需对
 
 #### 常用广告屏蔽
 
-[乘风](https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt)**@**[卡饭](https://bbs.kafan.cn/thread-1866845-1-1.html)
+[乘风](https://cdn.jsdelivr.net/gh/xinggsf/Adblock-Plus-Rule@master/rule.txt)**@**[卡饭](https://bbs.kafan.cn/thread-1866845-1-1.html)
 
 [anti-AD](https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt)**@**[Github](https://github.com/privacy-protection-tools/anti-AD)
 
