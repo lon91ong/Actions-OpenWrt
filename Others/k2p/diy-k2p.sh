@@ -28,6 +28,9 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/fee
 # 修复K2P无线丢失错误配置
 #sed -i ':a;N;s/Phicomm K2P\nendef/Phicomm\sK2P\n\tDEVICE_PACKAGES\s:=\s-luci-newapi\s-wpad-openssl\skmod-mt7615d_dbdc\swireless-tools\nendef/g;$!ba' target/linux/ramips/image/mt7621.mk
 #sed -i 's/^[ \t]*//g' target/linux/ramips/image/mt7621.mk
+sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' target/linux/ramips/base-files/etc/board.d/02_network
+sed -i ':a;N;$!ba;s/asiarf,ap7621-001/phicomm,k2p\)\n\t\tucidef_add_switch\s"switch0"\s\\\n\t\t\t"0:lan"\s"1:lan"\s"2:lan"\s"3:lan"\s"4:wan"\s"6@eth0"\n\t\t\t;;\n\t&/1' target/linux/ramips/base-files/etc/board.d/02_network
+sed -i ':a;N;$!ba;s/hiwifi,hc5962)/phicomm,k2p\)\n\t\tlan_mac=$(cat\s/sys/class/net/eth0/address\)\n\t\twan_mac=$(mtd_get_mac_binary factory 0xe006)\n\t\t;;\n\t&/1' target/linux/ramips/base-files/etc/board.d/02_network
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/phicomm_k2p
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
