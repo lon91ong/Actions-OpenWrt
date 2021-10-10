@@ -26,8 +26,20 @@ rm -rf package/feeds/custom/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 
 # 修复K2P无线丢失错误配置
-sed -i ':a;N;s/Phicomm K2P\nendef/Phicomm\sK2P\n\tDEVICE_PACKAGES\s:=\s-luci-newapi\s-wpad-openssl\skmod-mt7615d_dbdc\swireless-tools\nendef/g;$!ba' target/linux/ramips/image/mt7621.mk
-sed -i 's/^[ \t]*//g' target/linux/ramips/image/mt7621.mk
+#sed -i ':a;N;s/Phicomm K2P\nendef/Phicomm\sK2P\n\tDEVICE_PACKAGES\s:=\s-luci-newapi\s-wpad-openssl\skmod-mt7615d_dbdc\swireless-tools\nendef/g;$!ba' target/linux/ramips/image/mt7621.mk
+#sed -i 's/^[ \t]*//g' target/linux/ramips/image/mt7621.mk
+cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
+define Device/phicomm_k2p
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
+  DTS := Phicomm_k2p
+  DEVICE_VENDOR := Phicomm
+  DEVICE_MODEL := K2P
+  SUPPORTED_DEVICES += k2p
+  DEVICE_PACKAGES := -luci-newapi -wpad-openssl kmod-mt7615d_dbdc wireless-tools
+endef
+TARGET_DEVICES += phicomm_k2p
+EOF
+sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 # 修复DHCP服务, 从5.4内核改回4.14内核的resolv.conf路径
 sed -i 's|resolv.conf.d/resolv.conf.auto|resolv.conf.auto|g' `grep -l resolv.conf.d package/feeds/custom/*/root/etc/init.d/*`
