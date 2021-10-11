@@ -110,11 +110,6 @@
 	mtd-mac-address = <&factory 0xe000>;
 };
 
-&switch0 {
-	/delete-property/ compatible;
-	phy-mode = "rgmii";
-};
-
 &gsw {
 	compatible = "mediatek,ralink-mt7621-gsw";
 };
