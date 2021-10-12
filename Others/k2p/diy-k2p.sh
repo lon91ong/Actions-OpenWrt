@@ -30,7 +30,7 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 # 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 rm -rf package/feeds/custom/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
+git clone -b master https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 
 # 修复K2P无线丢失错误配置
 #sed -i 's/Phicomm K2P/&\n  DEVICE_PACKAGES := -luci-newapi -wpad-openssl kmod-mt7615d_dbdc wireless-tools/1' target/linux/ramips/image/mt7621.mk
