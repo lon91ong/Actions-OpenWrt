@@ -77,7 +77,6 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $DTS_FILE ] && mv -f $DTS_FILE openwrt/target/linux/ramips/dts/K2P.dts
         cp -f Others/common.conf openwrt/.config
         echo >> openwrt/.config
         [ -e $CONFIG_FILE ] && cat $CONFIG_FILE >> openwrt/.config
