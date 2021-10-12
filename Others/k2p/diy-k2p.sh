@@ -33,13 +33,11 @@ rm -rf package/feeds/custom/luci-theme-argon
 git clone -b master https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 
 # 修复K2P无线丢失错误配置
-#sed -i 's/Phicomm K2P/&\n  DEVICE_PACKAGES := -luci-newapi -wpad-openssl kmod-mt7615d_dbdc wireless-tools/1' target/linux/ramips/image/mt7621.mk
+sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615d luci-app-mtwifi/g' target/linux/ramips/image/mt7621.mk
 #sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 # custom插件汉化
 #mv feeds/custom/luci-app-turboacc/po/zh_Hans feeds/custom/luci-app-turboacc/po/zh-cn
-
-sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615d luci-app-mtwifi/g' target/linux/ramips/image/mt7621.mk
 
 sed -i 's?admin/status/channel_analysis??' package/feeds/luci/luci-mod-status/root/usr/share/luci/menu.d/luci-mod-status.json
 
