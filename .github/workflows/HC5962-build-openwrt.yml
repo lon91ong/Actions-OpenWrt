@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: HC5962-lienol-Build OpenWrt
+name: HC5962-lienol-Main
 
 on:
   watch:
