@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: K2P-lienol-19.07
+name: K2P-lienol-main
 
 on:
   watch:
