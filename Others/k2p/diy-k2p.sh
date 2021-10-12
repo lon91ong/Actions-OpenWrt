@@ -33,7 +33,9 @@ rm -rf package/feeds/custom/luci-theme-argon
 git clone -b master https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 
 # 修复K2P无线丢失错误配置
-sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615d luci-app-mtwifi/g' target/linux/ramips/image/mt7621.mk
+sed -i 's/kmod-mt7615e/& luci-app-mtwifi/g' target/linux/ramips/image/mt7621.mk
+# 默认闪存布局
+sed -i 's/15744k/16064k/g' target/linux/ramips/image/mt7621.mk
 #sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 # custom插件汉化
