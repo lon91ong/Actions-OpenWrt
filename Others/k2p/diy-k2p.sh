@@ -27,7 +27,9 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/fee
 
 # 修复K2P无线丢失错误配置
 #sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615e luci-app-mtwifi/g' target/linux/ramips/image/mt7621.mk
-#sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
+# 默认布局 16064k
+sed -i 's/15744/16064/g' target/linux/ramips/image/mt7621.mk
+sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 # custom插件汉化
 #mv feeds/custom/luci-app-turboacc/po/zh_Hans feeds/custom/luci-app-turboacc/po/zh-cn
