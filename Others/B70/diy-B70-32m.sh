@@ -42,10 +42,6 @@ TARGET_DEVICES += hc5962-spi
 EOF
 sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
-#设置32m闪存
-sed -i 's/0xfb0000/0x1fa0000/g' target/linux/ramips/dts/HC5962-SPI.dts
-#sed -i 's/16064k/32384k/g' target/linux/ramips/image/mt7621.mk
-
 # 修复DHCP服务, 从5.4内核改回4.14内核的resolv.conf路径
 #sed -i 's|resolv.conf.d/resolv.conf.auto|resolv.conf.auto|g' `grep -l resolv.conf.d package/feeds/custom/*/root/etc/init.d/*`
 
