@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: HC5962-32M-lienol-Main
+name: HC5962-32M-lede-Main
 
 on:
   watch:
@@ -22,8 +22,8 @@ on:
 #        default: 'false'
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: main
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Others/B70/hc5962-32m.config
   DTS_FILE: Others/B70/hc5962-32m.dts
