@@ -57,6 +57,15 @@ B70 16m和32m分别使用了两种闪存布局, 主要是为了备忘. 32m需对
 +		read-only;
 ```
 
+#### 删除默认密码
+
+lienol和lede的文件路径略有差异
+```
+#删除默认密码
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/default-settings/files/zzz-default-settings  #lienol
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings  #lede
+```
+
 #### 常用广告屏蔽
 
 [乘风](https://cdn.jsdelivr.net/gh/xinggsf/Adblock-Plus-Rule@master/rule.txt)**@**[卡饭](https://bbs.kafan.cn/thread-1866845-1-1.html)
