@@ -32,14 +32,14 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lea
 sed -i ':a;N;$!ba;s/hc5962/&|\\\n\thiwifi,&-spi/g' target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
-define Device/hc5962-spi
-  DTS := HC5962-SPI
+define Device/hiwifi_hc5962-spi
+  DTS := HIWIFI_HC5962-SPI
   IMAGE_SIZE := 32384k
   DEVICE_VENDOR := HiWiFi
   DEVICE_TITLE := HC5962-SPI
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3
 endef
-TARGET_DEVICES += hc5962-spi
+TARGET_DEVICES += hiwifi_hc5962-spi
 EOF
 sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
