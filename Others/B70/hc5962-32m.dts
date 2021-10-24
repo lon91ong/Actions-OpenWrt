@@ -140,6 +140,7 @@
 		port@4 {
 			status = "okay";
 			label = "wan";
+			mtd-mac-address = <&factory 0xe006>;
 		};
 	};
 };
