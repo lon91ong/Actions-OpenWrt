@@ -10,9 +10,8 @@ Build OpenWrt using GitHub Actions
 
 ## 分支说明
 
-- [main](https://github.com/lon91ong/Actions-OpenWrt/tree/main), 源于upstream的配置, 改用[lede-17.01](https://github.com/coolsnowwolf/openwrt/tree/lede-17.01)
-- [bypass](https://github.com/lon91ong/Actions-OpenWrt/tree/bypass), 在main的基础上引入[kiddin9/openwrt-packages](https://github.com/kiddin9/openwrt-packages)源, 其中的Bypass插件确实好用
-- [lienol](https://github.com/lon91ong/Actions-OpenWrt/tree/lienol-19.07), [Lienol-19.07源](https://github.com/Lienol/openwrt/tree/19.07)+[kiddin9/openwrt-packages](https://github.com/kiddin9/openwrt-packages)的Bypass
+- **4.14.x**: [Lienol-19.07源](https://github.com/Lienol/openwrt/tree/19.07)+[kiddin9/openwrt-packages](https://github.com/kiddin9/openwrt-packages)的Bypass, 主要适配机型:k2 youku-L1
+-  **5.4.x**: [lienol](https://github.com/Lienol/openwrt/tree/main)-适配机型:K2p, [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)-适配机型:B70硬改SPI闪存版
 
 ## Lienol分支说明
 
