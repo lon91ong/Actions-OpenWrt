@@ -11,10 +11,10 @@
 name: PSG1218-lienol-Build OpenWrt
 
 on:
-#  watch:
-#    types: started
+  watch:
+    types: started
 #  repository_dispatch:
-  workflow_dispatch:
+#  workflow_dispatch:
 #    inputs:
 #      ssh:
 #        description: 'SSH connection to Actions'
