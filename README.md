@@ -70,7 +70,7 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 
 [anti-AD](https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt)**@**[Github](https://github.com/privacy-protection-tools/anti-AD)
 
-#### [OpenWrt升级脚本sysupgrade详解](http://www.linvon.cn/post/OpenWrt升级脚本sysupgrade详解/)
+#### OpenWrt升级脚本sysupgrade详解 [参考](http://www.linvon.cn/post/OpenWrt升级脚本sysupgrade详解/)
 ```
 # sysupgrade命令参数：
 -d 重启前等待 delay 秒
