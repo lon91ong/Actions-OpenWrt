@@ -70,6 +70,32 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 
 [anti-AD](https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt)**@**[Github](https://github.com/privacy-protection-tools/anti-AD)
 
+#### [OpenWrt升级脚本sysupgrade详解](http://www.linvon.cn/post/OpenWrt升级脚本sysupgrade详解/)
+```
+# sysupgrade命令参数：
+-d 重启前等待 delay 秒
+-f 从 .tar.gz (文件或链接) 中恢复配置文件
+-i 交互模式
+-c 保留 /etc 中所有修改过的文件
+-n 重刷固件时不保留配置文件
+-T | –test 校验固件 config .tar.gz，但不真正烧写
+-F | –force 即使固件校验失败也强制烧写
+-q 较少的输出信息
+-v 详细的输出信息
+-h 显示帮助信息
+备份选项：
+-b | –create-backup
+把sysupgrade.conf 里描述的文件打包成.tar.gz 作为备份，不做烧写动作
+-r | –restore-backup
+从-b 命令创建的 .tar.gz 文件里恢复配置，不做烧写动作
+-l | –list-backup
+列出 -b 命令将备份的文件列表，但不创建备份文件
+# 实用实例：
+sysupgrade -v -F /tmp/openwrt-ramips-mt7621-hiwifi_hc5962-spi-squashfs-sysupgrade.bin  # 保留配置,强制升级
+sysupgrade -n -v /tmp/openwrt-ramips-mt7621-hiwifi_hc5962-spi-squashfs-sysupgrade.bin  # 干净升级
+```
+
+
 ## Usage
 
 - Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
