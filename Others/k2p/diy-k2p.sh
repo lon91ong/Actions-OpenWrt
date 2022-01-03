@@ -31,5 +31,8 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/fee
 sed -i 's/15744/16064/g' target/linux/ramips/image/mt7621.mk
 sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
+# 固件添加内核版本号
+sed -i ':a;N;$!ba;s/$(BOARD)/&$(LINUX_VERSION)/1' include/image.mk
+
 # custom插件汉化
 #mv feeds/custom/luci-app-turboacc/po/zh_Hans feeds/custom/luci-app-turboacc/po/zh-cn
