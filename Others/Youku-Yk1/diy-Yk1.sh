@@ -25,6 +25,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 rm -rf feeds/custom/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
 
+# 固件添加内核版本号
+sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
+
 # 默认turboacc开启DNS Caching功能
 #sed -i -r "s/(dns_caching )'0'/\1'1'/1" package/feeds/custom/luci-app-turboacc/root/etc/config/turboacc
 # 修复DHCP服务, 从5.4内核改回4.14内核的resolv.conf路径
