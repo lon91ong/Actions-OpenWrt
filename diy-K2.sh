@@ -25,6 +25,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 rm -rf feeds/custom/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
 
+# 此包4.14内核编译报错
+rm -rf feeds/custom/openwrt-fullconenat
+
 #设置16m闪存
 sed -i 's/0x7b0000/0xfb0000/g' target/linux/ramips/dts/PSG1218.dtsi
 sed -i 's/DTS := PSG1218A/&\n\tIMAGE_SIZE := 15744k/g' target/linux/ramips/image/mt7620.mk
