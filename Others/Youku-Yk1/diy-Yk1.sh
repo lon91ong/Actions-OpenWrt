@@ -29,7 +29,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custo
 rm -rf feeds/custom/openwrt-fullconenat
 
 # 固件添加内核版本号
-#sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
+sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
 
 # 默认turboacc开启DNS Caching功能
 #sed -i -r "s/(dns_caching )'0'/\1'1'/1" package/feeds/custom/luci-app-turboacc/root/etc/config/turboacc
