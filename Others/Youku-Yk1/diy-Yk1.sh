@@ -26,7 +26,8 @@ rm -rf feeds/custom/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
 
 # 此包4.14内核编译报错
-rm -rf feeds/custom/openwrt-fullconenat
+#rm -rf feeds/custom/openwrt-fullconenat
+cp -f Others/Youku-Yk1/fullconenat-makefile feeds/custom/openwrt-fullconenat/Makefile
 
 # 固件添加内核版本号
 sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
