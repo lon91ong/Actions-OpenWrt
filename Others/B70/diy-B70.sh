@@ -28,9 +28,10 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lea
 #更换ttnode源码版本
 rm -rf package/custom/luci-app-ttnode
 #git clone -b c4c6c6172a07291e28afd455f64e31e3a95e7d11 https://github.com/jerrykuku/luci-app-ttnode.git package/custom/luci-app-ttnode
-wget -O package/custom/ttnode.zip https://github.com/jerrykuku/luci-app-ttnode/archive/c4c6c6172a07291e28afd455f64e31e3a95e7d11.zip
+touch ttnode.zip
+wget -O ttnode.zip https://github.com/jerrykuku/luci-app-ttnode/archive/c4c6c6172a07291e28afd455f64e31e3a95e7d11.zip
 mkdir package/custom/luci-app-ttnode
-unzip -o package/custom/ttnode.zip -d package/custom/luci-app-ttnode/
+unzip -o ttnode.zip -d package/custom/luci-app-ttnode/
 mv -f package/custom/luci-app-ttnode/ttnode/luci-app-ttnode/* package/custom/luci-app-ttnode/
 
 # 机型名称适配
