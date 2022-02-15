@@ -31,8 +31,8 @@ rm -rf package/custom/luci-app-ttnode
 touch ttnode.zip
 wget -O ttnode.zip https://github.com/jerrykuku/luci-app-ttnode/archive/c4c6c6172a07291e28afd455f64e31e3a95e7d11.zip
 mkdir package/custom/luci-app-ttnode
-unzip -o ttnode.zip -d package/custom/luci-app-ttnode/
-mv -f package/custom/luci-app-ttnode/ttnode/luci-app-ttnode/* package/custom/luci-app-ttnode/
+unzip -o ttnode.zip -d package/custom/
+mv -f package/custom/luci-app-ttnode-c4c6c6172a07291e28afd455f64e31e3a95e7d11/ttnode/luci-app-ttnode/* package/custom/luci-app-ttnode/
 
 # 机型名称适配
 #sed -i 's/HC5962/&-SPI")\n\t\tname="hc5962-spi"\n\t\t;;\n\t\*"&/1' target/linux/ramips/base-files/lib/ramips.sh
