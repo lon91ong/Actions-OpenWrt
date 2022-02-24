@@ -11,7 +11,7 @@ Build OpenWrt using GitHub Actions
 ## 分支说明
 
 - **4.14.x**: [Lienol-19.07源](https://github.com/Lienol/openwrt/tree/19.07)+[kiddin9/openwrt-packages](https://github.com/kiddin9/openwrt-packages)的Bypass, 主要适配机型:k2 youku-L1
--  **5.4.x**: [lienol](https://github.com/Lienol/openwrt/tree/main)-适配机型:K2p, [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)-适配机型:B70硬改SPI闪存版
+-  **5.4.x**: [lienol](https://github.com/Lienol/openwrt/tree/main)-适配机型:K2p(公版, 5.10.x), [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)-适配机型:B70硬改SPI闪存版
 ## Lienol分支说明
 
 > ~~暂时放弃这个分支了, Lienol与lede的配置差别还是蛮大的, 用Youku-Yk1测试了几次, 固件其它功能都还好, 就是主题页侧边栏加载总出错, 虽说可以在SSH安装[**yuyangyu755@恩山**](https://www.right.com.cn/forum/thread-4050369-1-1.html)编译的主题包解决, 但是总没有原生编译的舒服。发了[issue](https://github.com/Lienol/openwrt/issues/574)迟迟没有回复, 不折腾了。~~
