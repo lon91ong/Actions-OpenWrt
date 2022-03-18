@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: K2P-lede-master
+name: K2P-lede
 
 on:
   watch:
@@ -31,7 +31,7 @@ env:
   DIY_P2_SH: Others/k2p/diy-k2p-lede.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: true
+  UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
