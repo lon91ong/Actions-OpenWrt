@@ -25,6 +25,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b master https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
+# 固件添加内核版本号
+sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
+
 # 修复K2P无线丢失错误配置
 sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615e kmod-mt7615-firmware/g' target/linux/ramips/image/mt7621.mk
 # 默认布局 16064k
