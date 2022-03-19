@@ -81,7 +81,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $DTS_FILE ] && mv -f $DTS_FILE openwrt/target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
-        [ -e Others/luci-app-ttnode.zip] && unzip -o Others/luci-app-ttnode.zip -d package/custom/
+        unzip -o Others/luci-app-ttnode.zip -d feeds/custom/
         cp -f Others/common.conf openwrt/.config
         echo >> openwrt/.config
         cat $CONFIG_FILE >> openwrt/.config
