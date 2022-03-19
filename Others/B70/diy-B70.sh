@@ -25,6 +25,10 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
+#解包ttnode
+curl -o ttnode.zip https://github.com/lon91ong/Actions-OpenWrt/raw/5.4.x/Others/luci-app-ttnode.zip
+unzip -o ttnode.zip -d feeds/custom/
+
 # 机型名称适配
 #sed -i 's/HC5962/&-SPI")\n\t\tname="hc5962-spi"\n\t\t;;\n\t\*"&/1' target/linux/ramips/base-files/lib/ramips.sh
 
