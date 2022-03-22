@@ -35,9 +35,9 @@ sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
 
 # make sure make config
-cd scripts
-rm -f diffconfig.sh
-wget https://raw.githubusercontents.com/lon91ong/Actions-OpenWrt/5.4.x/Others/k2p/lienol_diffconfig.sh -O diffconfig.sh
+#cd scripts
+#rm -f diffconfig.sh
+#wget https://raw.githubusercontents.com/lon91ong/Actions-OpenWrt/5.4.x/Others/k2p/lienol_diffconfig.sh -O diffconfig.sh
 
 # custom插件汉化
 #mv feeds/custom/luci-app-turboacc/po/zh_Hans feeds/custom/luci-app-turboacc/po/zh-cn
