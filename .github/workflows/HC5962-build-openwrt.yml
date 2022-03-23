@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: HC5962-lede-Main
+name: HC5962-lede
 
 on:
   watch:
