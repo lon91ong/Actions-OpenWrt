@@ -33,7 +33,7 @@ unzip -o ttnode.zip -d feeds/custom/
 #sed -i 's/HC5962/&-SPI")\n\t\tname="hc5962-spi"\n\t\t;;\n\t\*"&/1' target/linux/ramips/base-files/lib/ramips.sh
 
 # 切换内核版本为5.10
-sed -i 's/5.4/5.10/g' target/linux/ramips/Makefile
+#sed -i 's/5.4/5.10/g' target/linux/ramips/Makefile
 
 # 固件添加内核版本号
 sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
