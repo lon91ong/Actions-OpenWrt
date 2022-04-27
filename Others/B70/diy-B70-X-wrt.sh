@@ -16,6 +16,7 @@ sed -i 's/192.168.15.1/192.168.77.1/g' package/feeds/luci/luci-mod-system/htdocs
 
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/hostname='OpenWrt'/hostname='X-Wrt'/g" package/base-files/files/bin/config_generate
 
 #设置FAT为utf8编码
 find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_ACPI=y\nCONFIG_X86_ACPI_CPUFREQ=y\n \
