@@ -80,7 +80,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $DTS_FILE ] && mv -f $DTS_FILE openwrt/target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
-        cp -f $CONFIG_FILE >> openwrt/.config
+        cp -f $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd x-wrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
