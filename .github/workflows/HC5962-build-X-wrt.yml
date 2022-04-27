@@ -11,8 +11,8 @@
 name: HC5962-x-wrt
 
 on:
-#  watch:
-#    types: started
+  watch:
+    types: started
   repository_dispatch:
 #  workflow_dispatch:
 #    inputs:
@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/x-wrt/x-wrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: Others/B70/hc5962.config
+  CONFIG_FILE: Others/B70/hc5962_x-wrt.config
   DTS_FILE: Others/B70/hc5962.dts
   DIY_P1_SH: diy-feed.sh
   DIY_P2_SH: Others/B70/diy-B70-X-wrt.sh
@@ -102,9 +102,7 @@ jobs:
       run: |
         [ -e files ] && mv files x-wrt/files
         [ -e $DTS_FILE ] && mv -f $DTS_FILE openwrt/target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
-        cp -f Others/common.conf x-wrt/.config
-        echo >> x-wrt/.config
-        cat $CONFIG_FILE >> x-wrt/.config
+        cp -f $CONFIG_FILE >> x-wrt/.config
         chmod +x $DIY_P2_SH
         cd x-wrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
