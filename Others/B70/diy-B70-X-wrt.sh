@@ -11,8 +11,8 @@ cd $GITHUB_WORKSPACE/openwrt
 rm -rf $localdir
 }
 
+mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap
 cd $GITHUB_WORKSPACE/xwrt/devices/common
-mkdir -p packages/luci-app-natcap
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/packages/luci-app-natcap" packages/luci-app-natcap
 cd $GITHUB_WORKSPACE/xwrt/devices/common
 mkdir -p patches/luci-base
