@@ -11,10 +11,14 @@ cd $GITHUB_WORKSPACE/openwrt
 rm -rf $localdir
 }
 
-mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common
-cd $GITHUB_WORKSPACE/xwrt/devices/common
+mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap
+cd $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/packages/luci-app-natcap" packages/luci-app-natcap
+mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-base
+cd $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-base
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/patches/luci-base" patches/luci-base
+mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-app-wizard
+cd $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-app-wizard
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/patches/luci-app-wizard" patches/luci-app-wizard
 
 rm -rf feeds/packages/net/frp
