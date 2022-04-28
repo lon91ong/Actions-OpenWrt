@@ -13,13 +13,13 @@ rm -rf $localdir
 
 mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap
 cd $GITHUB_WORKSPACE/xwrt/devices/common
-git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/packages/luci-app-natcap" packages/luci-app-natcap
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "packages/luci-app-natcap" xwrt/devices/common/packages/luci-app-natcap
 cd $GITHUB_WORKSPACE/xwrt/devices/common
 mkdir -p patches/luci-base
-git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/patches/luci-base" patches/luci-base
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "patches/luci-base" xwrt/devices/common/patches/luci-base
 cd $GITHUB_WORKSPACE/xwrt/devices/common
 mkdir -p patches/luci-app-wizard
-git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/patches/luci-app-wizard" patches/luci-app-wizard
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "patches/luci-app-wizard" xwrt/devices/common/patches/luci-app-wizard
 
 rm -rf feeds/packages/net/frp
 git clone --depth 1 https://github.com/kuoruan/openwrt-frp feeds/packages/net/frp
