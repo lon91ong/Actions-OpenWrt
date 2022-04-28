@@ -11,6 +11,10 @@ cd $GITHUB_WORKSPACE/openwrt
 rm -rf $localdir
 }
 
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/packages/luci-app-natcap" $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/patches/luci-base" $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-base
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "xwrt/devices/common/patches/luci-app-wizard" $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-app-wizard
+
 rm -rf feeds/packages/net/frp
 git clone --depth 1 https://github.com/kuoruan/openwrt-frp feeds/packages/net/frp
 
@@ -103,6 +107,7 @@ rm -rf feeds/x/*/.svn
 rm -rf feeds/x/*/.github
 rm -rf feeds/x/*/.gitignore
 
+curl curl -o $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/convert_translation.sh
 chmod +x $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh
 bash $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh -a >/dev/null 2>&1
 
