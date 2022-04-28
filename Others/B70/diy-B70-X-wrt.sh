@@ -100,6 +100,7 @@ mkdir -p feeds/x/luci-app-wizard/patches
 cp $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-app-wizard/* feeds/x/luci-app-wizard/patches
 
 rm -rf feeds/x/luci-app-natcap/files/luci/controller/natcap.lua
+curl -o feeds/x/luci-app-natcap/files/luci/controller/natcap.lua https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/packages/luci-app-natcap/natcap.lua
 cp $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap/natcap.lua feeds/x/luci-app-natcap/files/luci/controller/
 sed -i 's|Map("natcapd", luci.xml.pcdata(translate("Advanced Options")))|Map("natcapd", luci.xml.pcdata(translate("Fast NAT Forwarding")))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
 sed -i 's|s:tab("system", translate("System Settings"))|-- s:tab("system", translate("System Settings"))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
@@ -113,7 +114,7 @@ rm -rf feeds/x/*/.svn
 rm -rf feeds/x/*/.github
 rm -rf feeds/x/*/.gitignore
 
-curl curl -o $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/convert_translation.sh
+curl -o $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/convert_translation.sh
 chmod +x $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh
 bash $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh -a >/dev/null 2>&1
 
