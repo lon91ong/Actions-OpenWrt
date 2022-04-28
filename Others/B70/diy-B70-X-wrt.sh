@@ -11,12 +11,6 @@ cd $GITHUB_WORKSPACE/openwrt
 rm -rf $localdir
 }
 
-rm -rf feeds/packages/net/smartdns
-git_sparse_clone main "https://github.com/kenzok8/jell" "feeds/packages/net/smartdns_pkg" smartdns
-
-rm -rf feeds/packages/net/adguardhome
-git_sparse_clone main "https://github.com/kenzok8/small-package" "feeds/packages/net/adguardhome_pkg" adguardhome
-
 rm -rf feeds/packages/net/frp
 git clone --depth 1 https://github.com/kuoruan/openwrt-frp feeds/packages/net/frp
 
@@ -37,9 +31,6 @@ git_sparse_clone master "https://github.com/coolsnowwolf/luci" "feeds/luci/appli
 
 rm -rf feeds/luci/applications/luci-app-airplay2
 git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/applications/airplay2_luci" applications/luci-app-airplay2
-
-rm -rf feeds/luci/applications/luci-app-smartdns
-git_sparse_clone main "https://github.com/kenzok8/jell" "feeds/luci/applications/smartdns_luci" luci-app-smartdns
 
 rm -rf feeds/luci/applications/luci-app-frpc
 git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "feeds/luci/applications/frpc_luci" luci-app-frpc
