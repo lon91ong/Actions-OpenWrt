@@ -15,9 +15,6 @@ mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap
 cd $GITHUB_WORKSPACE/xwrt/devices/common
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "packages/luci-app-natcap" xwrt/devices/common/packages/luci-app-natcap
 cd $GITHUB_WORKSPACE/xwrt/devices/common
-mkdir -p patches/luci-base
-git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "patches/luci-base" xwrt/devices/common/patches/luci-base
-cd $GITHUB_WORKSPACE/xwrt/devices/common
 mkdir -p patches/luci-app-wizard
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "patches/luci-app-wizard" xwrt/devices/common/patches/luci-app-wizard
 
@@ -79,7 +76,7 @@ echo -e 'msgid "Traffic Priority"' >>feeds/luci/applications/luci-app-nft-qos/po
 echo -e 'msgstr "流量優先權"' >>feeds/luci/applications/luci-app-nft-qos/po/zh_Hant/nft-qos.po
 
 mkdir -p feeds/luci/modules/luci-base/patches
-cp $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-base/* feeds/luci/modules/luci-base/patches
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "feeds/luci/modules/luci-base/patches" xwrt/devices/common/patches/luci-base
 
 sed -i "s|dropbear.@dropbear[0].PasswordAuth='off'|dropbear.@dropbear[0].PasswordAuth='on'|g" feeds/x/base-config-setting/files/uci.defaults
 sed -i "s|dropbear.@dropbear[0].RootPasswordAuth='off'|dropbear.@dropbear[0].RootPasswordAuth='on'|g" feeds/x/base-config-setting/files/uci.defaults
