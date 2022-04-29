@@ -26,6 +26,7 @@ rm -rf feeds/packages/net/*/.gitattributes
 rm -rf feeds/packages/net/*/.svn
 rm -rf feeds/packages/net/*/.github
 rm -rf feeds/packages/net/*/.gitignore
+rm -rf feeds/packages/net/shadowsocks-libev
 rm -rf feeds/luci/applications/luci-app-wol
 
 rm -rf feeds/luci/applications/luci-app-nft-qos
