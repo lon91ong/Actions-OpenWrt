@@ -92,7 +92,7 @@ sed -i "/DISTRIB_RELEASE_TAG/a\echo \"DISTRIB_RELEASE_TAG=\'${RELEASE_TAG}\'\" >
 rm -rf feeds/x/luci-app-wizard
 git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "feeds/x/wizard_luci" luci-app-wizard
 mkdir -p feeds/x/luci-app-wizard/patches
-cp $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-app-wizard/* feeds/x/luci-app-wizard/patches
+cp $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-app-wizard/*.patch feeds/x/luci-app-wizard/patches
 
 rm -rf feeds/x/luci-app-natcap/files/luci/controller/natcap.lua
 curl -o feeds/x/luci-app-natcap/files/luci/controller/natcap.lua https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/packages/luci-app-natcap/natcap.lua
@@ -117,10 +117,10 @@ bash $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh -a >/dev/null 
 
 # Modify default IP
 sed -i 's/192.168.15.1/192.168.77.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.15.1/192.168.77.1/g' package/feeds/luci/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js
+#sed -i 's/192.168.15.1/192.168.77.1/g' package/feeds/luci/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js
 
 #删除默认密码
-sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+#sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/hostname='OpenWrt'/hostname='X-Wrt'/g" package/base-files/files/bin/config_generate
 
 #设置FAT为utf8编码
