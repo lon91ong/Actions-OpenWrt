@@ -44,7 +44,7 @@ rm -rf feeds/luci/applications/luci-app-opkg
 git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/applications/opkg_luci" applications/luci-app-opkg
 
 rm -rf feeds/packages/net/shadowsocks-libev
-git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "feeds/packages/net/shadowsocks-libev" luci-app-shadowsocks-libev
+git_sparse_clone master "https://github.com/coolsnowwolf/packages" "feeds/packages/net/shadowsocks-libev" net/shadowsocks-libev
 
 rm -rf feeds/luci/applications/*/.git
 rm -rf feeds/luci/applications/*/.gitattributes
