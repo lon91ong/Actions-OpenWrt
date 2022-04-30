@@ -11,13 +11,6 @@ cd $GITHUB_WORKSPACE/openwrt
 rm -rf $localdir
 }
 
-mkdir -p $GITHUB_WORKSPACE/x-wrt/devices/common/packages/luci-app-natcap
-cd $GITHUB_WORKSPACE/x-wrt/devices/common
-git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "packages/luci-app-natcap" xwrt/devices/common/packages/luci-app-natcap
-cd $GITHUB_WORKSPACE/x-wrt/devices/common
-mkdir -p patches/luci-app-wizard
-git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "patches/luci-app-wizard" xwrt/devices/common/patches/luci-app-wizard
-
 rm -rf feeds/packages/net/frp
 git clone --depth 1 https://github.com/kuoruan/openwrt-frp feeds/packages/net/frp
 
@@ -92,11 +85,12 @@ sed -i "/DISTRIB_RELEASE_TAG/a\echo \"DISTRIB_RELEASE_TAG=\'${RELEASE_TAG}\'\" >
 rm -rf feeds/x/luci-app-wizard
 git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "feeds/x/wizard_luci" luci-app-wizard
 mkdir -p feeds/x/luci-app-wizard/patches
-cp $GITHUB_WORKSPACE/../x-wrt/devices/common/patches/luci-app-wizard/*.patch feeds/x/luci-app-wizard/patches
+git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "feeds/x/luci-app-wizard/patches" xwrt/devices/common/patches/luci-app-wizard
+#cp $GITHUB_WORKSPACE/../x-wrt/devices/common/patches/luci-app-wizard/*.patch feeds/x/luci-app-wizard/patches
 
 rm -rf feeds/x/luci-app-natcap/files/luci/controller/natcap.lua
 curl -o feeds/x/luci-app-natcap/files/luci/controller/natcap.lua https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/packages/luci-app-natcap/natcap.lua
-cp $GITHUB_WORKSPACE/../x-wrt/devices/common/packages/luci-app-natcap/natcap.lua feeds/x/luci-app-natcap/files/luci/controller/
+#cp $GITHUB_WORKSPACE/x-wrt/devices/common/packages/luci-app-natcap/natcap.lua feeds/x/luci-app-natcap/files/luci/controller/
 sed -i 's|Map("natcapd", luci.xml.pcdata(translate("Advanced Options")))|Map("natcapd", luci.xml.pcdata(translate("Fast NAT Forwarding")))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
 sed -i 's|s:tab("system", translate("System Settings"))|-- s:tab("system", translate("System Settings"))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
 sed -i 's|s:taboption("system", Flag,|s:option(Flag,|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
