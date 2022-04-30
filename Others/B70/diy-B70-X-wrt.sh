@@ -11,10 +11,10 @@ cd $GITHUB_WORKSPACE/openwrt
 rm -rf $localdir
 }
 
-mkdir -p $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap
-cd $GITHUB_WORKSPACE/xwrt/devices/common
+mkdir -p $GITHUB_WORKSPACE/x-wrt/devices/common/packages/luci-app-natcap
+cd $GITHUB_WORKSPACE/x-wrt/devices/common
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "packages/luci-app-natcap" xwrt/devices/common/packages/luci-app-natcap
-cd $GITHUB_WORKSPACE/xwrt/devices/common
+cd $GITHUB_WORKSPACE/x-wrt/devices/common
 mkdir -p patches/luci-app-wizard
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "patches/luci-app-wizard" xwrt/devices/common/patches/luci-app-wizard
 
@@ -42,9 +42,6 @@ git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "feeds/luc
 
 rm -rf feeds/luci/applications/luci-app-opkg
 git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/applications/opkg_luci" applications/luci-app-opkg
-
-rm -rf feeds/packages/net/shadowsocks-libev
-git_sparse_clone master "https://github.com/coolsnowwolf/packages" "feeds/packages/net/shadowsocks-libev" net/shadowsocks-libev
 
 rm -rf feeds/luci/applications/*/.git
 rm -rf feeds/luci/applications/*/.gitattributes
@@ -95,11 +92,11 @@ sed -i "/DISTRIB_RELEASE_TAG/a\echo \"DISTRIB_RELEASE_TAG=\'${RELEASE_TAG}\'\" >
 rm -rf feeds/x/luci-app-wizard
 git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "feeds/x/wizard_luci" luci-app-wizard
 mkdir -p feeds/x/luci-app-wizard/patches
-cp $GITHUB_WORKSPACE/xwrt/devices/common/patches/luci-app-wizard/*.patch feeds/x/luci-app-wizard/patches
+cp $GITHUB_WORKSPACE/x-wrt/devices/common/patches/luci-app-wizard/*.patch feeds/x/luci-app-wizard/patches
 
 rm -rf feeds/x/luci-app-natcap/files/luci/controller/natcap.lua
 curl -o feeds/x/luci-app-natcap/files/luci/controller/natcap.lua https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/packages/luci-app-natcap/natcap.lua
-cp $GITHUB_WORKSPACE/xwrt/devices/common/packages/luci-app-natcap/natcap.lua feeds/x/luci-app-natcap/files/luci/controller/
+cp $GITHUB_WORKSPACE/x-wrt/devices/common/packages/luci-app-natcap/natcap.lua feeds/x/luci-app-natcap/files/luci/controller/
 sed -i 's|Map("natcapd", luci.xml.pcdata(translate("Advanced Options")))|Map("natcapd", luci.xml.pcdata(translate("Fast NAT Forwarding")))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
 sed -i 's|s:tab("system", translate("System Settings"))|-- s:tab("system", translate("System Settings"))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
 sed -i 's|s:taboption("system", Flag,|s:option(Flag,|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
@@ -112,9 +109,9 @@ rm -rf feeds/x/*/.svn
 rm -rf feeds/x/*/.github
 rm -rf feeds/x/*/.gitignore
 
-curl -o $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/convert_translation.sh
-chmod +x $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh
-bash $GITHUB_WORKSPACE/xwrt/devices/common/convert_translation.sh -a >/dev/null 2>&1
+curl -o $GITHUB_WORKSPACE/x-wrt/devices/common/convert_translation.sh https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/convert_translation.sh
+chmod +x $GITHUB_WORKSPACE/x-wrt/devices/common/convert_translation.sh
+bash $GITHUB_WORKSPACE/x-wrt/devices/common/convert_translation.sh -a >/dev/null 2>&1
 
 #### 照抄End
 
