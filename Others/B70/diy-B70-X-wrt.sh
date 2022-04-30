@@ -103,9 +103,11 @@ rm -rf feeds/x/*/.svn
 rm -rf feeds/x/*/.github
 rm -rf feeds/x/*/.gitignore
 
-curl -o $GITHUB_WORKSPACE/x-wrt/devices/common/convert_translation.sh https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/convert_translation.sh
-chmod +x $GITHUB_WORKSPACE/x-wrt/devices/common/convert_translation.sh
-bash $GITHUB_WORKSPACE/x-wrt/devices/common/convert_translation.sh -a >/dev/null 2>&1
+cd $GITHUB_WORKSPACE/x-wrt
+mkdir -p devices/common
+curl -o devices/common/convert_translation.sh https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/convert_translation.sh
+chmod +x devices/common/convert_translation.sh
+bash devices/common/convert_translation.sh -a >/dev/null 2>&1
 
 #### 照抄End
 
