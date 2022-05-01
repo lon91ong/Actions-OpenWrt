@@ -12,7 +12,7 @@
 # Comment a feed source
 #sed -i -r 's/(^src-git packages.*)/#\1/' feeds.conf.default
 #sed -i -r 's/(^src-git-full luci.*)/#\1/' feeds.conf.default
-sed -i 's|x-wrt\/luci.git|coolsnowwolf\/luci|g' feeds.conf.default
+#sed -i 's|x-wrt\/luci.git|coolsnowwolf\/luci|g' feeds.conf.default
 # Uncomment a feed source
 #sed -i 's/^#\(.*telephony\)/\1/' feeds.conf.default
 #sed -i 's/17.01/19.07/1' feeds.conf.default
