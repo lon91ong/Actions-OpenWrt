@@ -26,7 +26,7 @@ git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci
 
 rm -rf feeds/luci/applications/luci-app-dawn
 git_sparse_clone master "https://github.com/coolsnowwolf/luci" "feeds/luci/applications/dawn_luci" applications/luci-app-dawn
-git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/libs/luci-lib-fs" libs/luci-lib-fs
+git_sparse_clone master "https://github.com/coolsnowwolf/luci" "feeds/luci/libs/luci-lib-fs" libs/luci-lib-fs
 
 rm -rf feeds/luci/applications/luci-app-airplay2
 git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/applications/airplay2_luci" applications/luci-app-airplay2
