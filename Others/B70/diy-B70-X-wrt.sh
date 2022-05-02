@@ -27,7 +27,7 @@ git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci
 rm -rf feeds/luci/applications/luci-app-dawn
 rm -rf package/kernel/ntfs3
 git_sparse_clone master "https://github.com/coolsnowwolf/luci" "feeds/luci/applications/dawn_luci" applications/luci-app-dawn
-#git_sparse_clone master "https://github.com/coolsnowwolf/luci" "feeds/custom/luci-lib-fs" libs/luci-lib-fs
+#git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/libs/lib_fs" libs/luci-lib-fs
 
 rm -rf feeds/luci/applications/luci-app-airplay2
 git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/applications/airplay2_luci" applications/luci-app-airplay2
@@ -88,7 +88,7 @@ rm -rf feeds/x/luci-app-wizard
 git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "feeds/x/wizard_luci" luci-app-wizard
 mkdir -p feeds/x/luci-app-wizard/patches
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "feeds/x/luci-app-wizard/patches" xwrt/devices/common/patches/luci-app-wizard
-#cp $GITHUB_WORKSPACE/../x-wrt/devices/common/patches/luci-app-wizard/*.patch feeds/x/luci-app-wizard/patches
+mv -n feeds/x/luci-app-wizard/luci-app-wizard/ feeds/x/luci-app-wizard/patches/
 
 rm -rf feeds/x/luci-app-natcap/files/luci/controller/natcap.lua
 curl -o feeds/x/luci-app-natcap/files/luci/controller/natcap.lua https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/packages/luci-app-natcap/natcap.lua
