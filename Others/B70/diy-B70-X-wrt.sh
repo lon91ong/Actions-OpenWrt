@@ -90,9 +90,9 @@ mkdir -p feeds/x/luci-app-wizard/patches
 git_sparse_clone main "https://github.com/zhuxiaole/Build-OpenWrt" "feeds/x/luci-app-wizard/patches" xwrt/devices/common/patches/luci-app-wizard
 mv -n feeds/x/luci-app-wizard/luci-app-wizard/ feeds/x/luci-app-wizard/patches/
 
-rm -rf feeds/x/luci-app-natcap/files/luci/controller/natcap.lua
-curl -o feeds/x/luci-app-natcap/files/luci/controller/natcap.lua https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/packages/luci-app-natcap/natcap.lua
-#cp $GITHUB_WORKSPACE/x-wrt/devices/common/packages/luci-app-natcap/natcap.lua feeds/x/luci-app-natcap/files/luci/controller/
+#rm -rf feeds/x/luci-app-natcap/files/luci/controller/natcap.lua
+#curl -o feeds/x/luci-app-natcap/files/luci/controller/natcap.lua https://github.com/zhuxiaole/Build-OpenWrt/raw/main/xwrt/devices/common/packages/luci-app-natcap/natcap.lua
+
 sed -i 's|Map("natcapd", luci.xml.pcdata(translate("Advanced Options")))|Map("natcapd", luci.xml.pcdata(translate("Fast NAT Forwarding")))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
 sed -i 's|s:tab("system", translate("System Settings"))|-- s:tab("system", translate("System Settings"))|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
 sed -i 's|s:taboption("system", Flag,|s:option(Flag,|g' feeds/x/luci-app-natcap/files/luci/model/cbi/natcap/natcapd_sys.lua
