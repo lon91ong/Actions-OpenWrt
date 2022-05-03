@@ -74,9 +74,8 @@ jobs:
 
     - name: Update feeds
       run: |
-        cd x-wrt && ./scripts/feeds update -a
         chmod +x $FEED_PATCH
-        cd x-wrt
+        cd x-wrt && ./scripts/feeds update -a
         $GITHUB_WORKSPACE/$FEED_PATCH
 
     - name: Install feeds
@@ -84,7 +83,7 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e files ] && mv files openwrt/files
+        [ -e files ] && mv files x-wrt/files
         [ -e $DTS_FILE ] && mv -f $DTS_FILE x-wrt/target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
         cp -f $CONFIG_FILE x-wrt/.config
         chmod +x $DIY_P2_SH
