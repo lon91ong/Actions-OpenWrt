@@ -39,7 +39,7 @@ rm -rf feeds/luci/applications/luci-app-opkg
 git_sparse_clone openwrt-21.02 "https://github.com/immortalwrt/luci" "feeds/luci/applications/opkg_luci" applications/luci-app-opkg
 
 rm -rf feeds/luci/themes/luci-theme-argon
-git clone -b master https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 rm -rf feeds/luci/applications/*/.git
 rm -rf feeds/luci/applications/*/.gitattributes
