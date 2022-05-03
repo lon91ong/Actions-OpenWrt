@@ -13,13 +13,13 @@ find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_A
 CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
 #默认主题改为argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' package/feeds/luci/collections/luci/Makefile
 #rm -rf feeds/luci/themes/luci-theme-argon
 #git clone -b master https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 #解包ttnode
 curl -o ttnode.zip https://raw.githubusercontent.com/lon91ong/Actions-OpenWrt/5.4.x/Others/luci-app-ttnode.zip
-unzip -o ttnode.zip -d feeds/custom/
+unzip -o ttnode.zip -d package/feeds/custom/
 
 # 机型名称适配
 #sed -i 's/HC5962/&-SPI")\n\t\tname="hc5962-spi"\n\t\t;;\n\t\*"&/1' target/linux/ramips/base-files/lib/ramips.sh
