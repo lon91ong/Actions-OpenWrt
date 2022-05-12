@@ -84,6 +84,7 @@ jobs:
         rm -f 25_storage.js
         curl -o 20_memory.js https://github.com/HiJwm/MySettings/raw/main/25_storage.js
         
+        cd /workdir/openwrt
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
