@@ -75,16 +75,16 @@ jobs:
         cat $CONFIG_FILE >> openwrt/.config
         
         rm -f openwrt/package/default-settings/files/zzz-default-settings
-        curl -o openwrt/package/default-settings/files/zzz-default-settings https://github.com/HiJwm/MySettings/raw/main/Lienol-zzz-default-settings
+        curl -o openwrt/package/default-settings/files/zzz-default-settings https://raw.githubusercontent.com/HiJwm/MySettings/main/Lienol-zzz-default-settings
         cd openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
         rm -f 19_cpu.js
-        curl -o 19_cpu.js https://github.com/HiJwm/MySettings/raw/main/19_cpu.js
+        curl -o 19_cpu.js https://raw.githubusercontent.com/HiJwm/MySettings/main/19_cpu.js
         rm -f 20_memory.js
-        curl -o 20_memory.js https://github.com/HiJwm/MySettings/raw/main/20_memory.js
+        curl -o 20_memory.js https://raw.githubusercontent.com/HiJwm/MySettings/main/20_memory.js
         rm -f 25_storage.js
-        curl -o 25_storage.js https://github.com/HiJwm/MySettings/raw/main/25_storage.js
+        curl -o 25_storage.js https://raw.githubusercontent.com/HiJwm/MySettings/main/25_storage.js
         
-        cd /workdir
+        cd $GITHUB_WORKSPACE
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
