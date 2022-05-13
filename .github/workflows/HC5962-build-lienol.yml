@@ -76,15 +76,15 @@ jobs:
         
         rm -f openwrt/package/default-settings/files/zzz-default-settings
         curl -o openwrt/package/default-settings/files/zzz-default-settings https://github.com/HiJwm/MySettings/raw/main/Lienol-zzz-default-settings
-        #cd openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
-        rm -f openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/19_cpu.js
-        curl -o openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/19_cpu.js https://github.com/HiJwm/MySettings/raw/main/19_cpu.js
-        rm -f openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/20_memory.js
-        curl -o openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/20_memory.js https://github.com/HiJwm/MySettings/raw/main/20_memory.js
-        rm -f openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/25_storage.js
-        curl -o openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/25_storage.js https://github.com/HiJwm/MySettings/raw/main/25_storage.js
+        cd openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
+        rm -f 19_cpu.js
+        curl -o 19_cpu.js https://github.com/HiJwm/MySettings/raw/main/19_cpu.js
+        rm -f 20_memory.js
+        curl -o 20_memory.js https://github.com/HiJwm/MySettings/raw/main/20_memory.js
+        rm -f 25_storage.js
+        curl -o 25_storage.js https://github.com/HiJwm/MySettings/raw/main/25_storage.js
         
-        #cd $GITHUB_WORKSPACE/openwrt
+        cd /workdir
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
