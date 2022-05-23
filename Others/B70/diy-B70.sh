@@ -31,6 +31,7 @@ unzip -o ttnode.zip -d feeds/custom/
 
 # 机型名称适配
 #sed -i 's/HC5962/&-SPI")\n\t\tname="hc5962-spi"\n\t\t;;\n\t\*"&/1' target/linux/ramips/base-files/lib/ramips.sh
+sed -i 's/hiwifi,hc5962|\\/d' target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
 
 # 切换内核版本为5.10
 #sed -i 's/5.4/5.10/g' target/linux/ramips/Makefile
