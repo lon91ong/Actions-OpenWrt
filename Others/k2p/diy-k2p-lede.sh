@@ -14,7 +14,7 @@
 sed -i 's/192.168.1.1/192.168.77.1/g' package/base-files/files/bin/config_generate
 
 #删除默认密码, 默认密码 password
-#sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/default-settings/files/zzz-default-settings
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/default-settings/files/zzz-default-settings
 
 #设置FAT为utf8编码
 find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_ACPI=y\nCONFIG_X86_ACPI_CPUFREQ=y\n \
@@ -31,7 +31,8 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/
 sed -i ':a;N;$!ba;s/$(BOARD)/&-$(LINUX_VERSION)/1' include/image.mk
 
 # 修复K2P无线丢失错误配置
-sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615e kmod-mt7615-firmware/g' target/linux/ramips/image/mt7621.mk
+#sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615e kmod-mt7615-firmware/g' target/linux/ramips/image/mt7621.mk
+
 # 默认布局 16064k
 sed -i 's/15744/16064/g' target/linux/ramips/image/mt7621.mk
 sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
