@@ -39,3 +39,15 @@ sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 # custom插件汉化
 #mv feeds/custom/luci-app-turboacc/po/zh_Hans feeds/custom/luci-app-turboacc/po/zh-cn
+
+# 修复无线WPA加密
+cat >> .config <<EOF
+CONFIG_PACKAGE_hostapd=y
+CONFIG_PACKAGE_hostapd-basic=m
+CONFIG_PACKAGE_hostapd-common=y
+CONFIG_PACKAGE_hostapd-hs20=m
+CONFIG_PACKAGE_hostapd-mini=m
+CONFIG_PACKAGE_hostapd-openssl=m
+CONFIG_PACKAGE_hostapd-utils=y
+CONFIG_PACKAGE_hostapd-wolfssl=m
+EOF
