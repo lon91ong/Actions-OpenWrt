@@ -21,9 +21,9 @@ find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_A
 CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
 # 修改默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
-#rm -rf package/feeds/custom/luci-theme-argon
-#git clone https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+rm -rf package/feeds/custom/luci-theme-argon
+git clone -b master https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 # 修复K2P无线丢失错误配置
 #sed -i 's/kmod-mt7615d_dbdc/kmod-mt7615e luci-app-mtwifi/g' target/linux/ramips/image/mt7621.mk
