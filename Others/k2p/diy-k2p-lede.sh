@@ -42,12 +42,5 @@ sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 # 修复无线WPA加密
 cat >> .config <<EOF
-CONFIG_PACKAGE_hostapd=y
-CONFIG_PACKAGE_hostapd-basic=m
-CONFIG_PACKAGE_hostapd-common=y
-CONFIG_PACKAGE_hostapd-hs20=m
-CONFIG_PACKAGE_hostapd-mini=m
-CONFIG_PACKAGE_hostapd-openssl=m
-CONFIG_PACKAGE_hostapd-utils=y
-CONFIG_PACKAGE_hostapd-wolfssl=m
+CONFIG_PACKAGE_wpad-openssl=y
 EOF
